@@ -1,0 +1,1 @@
+#import <Foundation/Foundation.h>@interface QmemberTypeModel : NSObject@property (nonatomic, strong)  NSString *QmemberTypeId;@property (nonatomic, strong)  NSString *QmemberTypeTitle;- (void)initWithValue:(NSString *)qmemberTypeId QmemberTypeTitle:(NSString *)qmemberTypeTitle;@end

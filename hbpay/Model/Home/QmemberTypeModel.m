@@ -1,0 +1,1 @@
+#import "QmemberTypeModel.h"#import "Utils.h"@implementation QmemberTypeModel- (void)initWithValue:(NSString *)qmemberTypeId QmemberTypeTitle:(NSString *)qmemberTypeTitle{    self.QmemberTypeId=[Utils trim:qmemberTypeId];    self.QmemberTypeTitle=[Utils trim:qmemberTypeTitle];}@end
