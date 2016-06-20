@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E1AEC96E679D800EEBAA0A83A6B21102D269A971",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "78af90f2-abd7-954c-a3fc-231db767e9d8++4873" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E1AEC96E679D800EEBAA0A83A6B21102D269A971" : 0,
+    "78af90f2-abd7-954c-a3fc-231db767e9d8++4873" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "06B3905F-1959-4D68-85CD-77102BEA39AA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E1AEC96E679D800EEBAA0A83A6B21102D269A971" : "hbpay\/",
+    "78af90f2-abd7-954c-a3fc-231db767e9d8++4873" : "hbpay\/hbpay\/Libs\/GTMBase64\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "hbpay",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "hbpay.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.1.24\/svn\/yiwopai",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "78af90f2-abd7-954c-a3fc-231db767e9d8++4873"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jackjetty\/hbpay.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E1AEC96E679D800EEBAA0A83A6B21102D269A971"
+    }
+  ]
+}
