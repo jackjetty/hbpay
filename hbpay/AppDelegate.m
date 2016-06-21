@@ -23,10 +23,9 @@
 #import "MessageController.h"
 #import "RecordController.h"
 #import "FindController.h"
-#import "RegisterController.h"
-
+#import "RegisterController.h" 
 #import "QcoinController.h"
-
+#import "UMMobClick/MobClick.h"
 #import "QcoinSuccessController.h"
 #import "QmonthController.h"
 #import "QmonthHandleController.h"
@@ -180,8 +179,25 @@
      };
 }
 
+- (void)umengTrack {
+    //    [MobClick setAppVersion:XcodeAppVersion]; //参数为NSString * 类型,自定义app版本信息，如果不设置，默认从CFBundleVersion里取
+    [MobClick setLogEnabled:YES];
+    UMConfigInstance.appKey =UM_APPKEY;
+    //UMConfigInstance.secret = @"secretstringaldfkals";
+    UMConfigInstance.channelId = @"App Store";
+    //    UMConfigInstance.eSType = E_UM_GAME;
+    [MobClick startWithConfigure:UMConfigInstance];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
+    [self umengTrack];
+    
     _inNightMode =false;
  
     

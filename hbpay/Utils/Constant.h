@@ -23,6 +23,7 @@
 #define FLOWBUSID @"105"
 #define BILLBUSID @"106"
 
+#define UM_APPKEY @"57689e6667e58e3d8f000f31"
 //登入
 #define LOGIN_METHOD @"/user/login"
 

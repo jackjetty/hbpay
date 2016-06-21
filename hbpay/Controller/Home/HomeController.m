@@ -414,9 +414,9 @@ static NSUInteger const CELLSPACE = 6;//记录中间图片的下标,开始总是
     
      [self autoLoad];
     
-     NSLog(@"开始了啊");
+    
      [self hsUpdateApp];
-     NSLog(@"结束了啊了啊");
+    
     
     
 }
@@ -486,7 +486,6 @@ static NSUInteger const CELLSPACE = 6;//记录中间图片的下标,开始总是
 
 -(void)clickCategory:(UITapGestureRecognizer *)gestureRecognizer
 {
-    NSLog(@"click");
     NSLog(@"%hhd",[gestureRecognizer isMemberOfClass:[UITapGestureRecognizer class]]);
     
     UIView *viewClicked=[gestureRecognizer view];
@@ -620,7 +619,7 @@ static NSUInteger const CELLSPACE = 6;//记录中间图片的下标,开始总是
     NSDictionary *dic = array[0];
     NSString *appStoreVersion = dic[@"version"];
     //打印版本号
-    NSLog(@"当前版本号:%@\n商店版本号:%@",currentVersion,appStoreVersion);
+   // NSLog(@"当前版本号:%@\n商店版本号:%@",currentVersion,appStoreVersion);
     //4当前版本号小于商店版本号,就更新
     
     

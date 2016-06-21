@@ -17,6 +17,10 @@
 		8DB536DE1807D2C70043C99A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB536DD1807D2C70043C99A /* AppDelegate.m */; };
 		8DB536E01807D2C70043C99A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DB536DF1807D2C70043C99A /* Images.xcassets */; };
 		8DB536FE1807D3070043C99A /* HBPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB536FD1807D3070043C99A /* HBPayViewController.m */; };
+		CF37FF8E1D18D6B6009986B5 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF37FF8D1D18D6B6009986B5 /* UMMobClick.framework */; };
+		CF37FF901D18D6F3009986B5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF37FF8F1D18D6F3009986B5 /* CoreTelephony.framework */; };
+		CF37FF921D18D716009986B5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF37FF911D18D716009986B5 /* libz.tbd */; };
+		CF37FF941D18D735009986B5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF37FF931D18D735009986B5 /* libsqlite3.tbd */; };
 		CFCD838D1CE49B410078719E /* TMController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCD838C1CE49B410078719E /* TMController.m */; };
 		E1709E721B670B2200787B3C /* Constant.h in Sources */ = {isa = PBXBuildFile; fileRef = E1709E691B670B2200787B3C /* Constant.h */; };
 		E1709E731B670B2200787B3C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E1709E6C1B670B2200787B3C /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -435,6 +439,10 @@
 		8DB536F21807D2C70043C99A /* hbpayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hbpayTests.m; sourceTree = "<group>"; };
 		8DB536FC1807D3070043C99A /* HBPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPayViewController.h; sourceTree = "<group>"; };
 		8DB536FD1807D3070043C99A /* HBPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPayViewController.m; sourceTree = "<group>"; };
+		CF37FF8D1D18D6B6009986B5 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UMMobClick.framework; path = hbpay/Libs/UMMobClick.framework; sourceTree = "<group>"; };
+		CF37FF8F1D18D6F3009986B5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		CF37FF911D18D716009986B5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CF37FF931D18D735009986B5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CFCD838B1CE49B410078719E /* TMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMController.h; sourceTree = "<group>"; };
 		CFCD838C1CE49B410078719E /* TMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMController.m; sourceTree = "<group>"; };
 		E1709E691B670B2200787B3C /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -1152,6 +1160,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF37FF941D18D735009986B5 /* libsqlite3.tbd in Frameworks */,
+				CF37FF921D18D716009986B5 /* libz.tbd in Frameworks */,
+				CF37FF901D18D6F3009986B5 /* CoreTelephony.framework in Frameworks */,
+				CF37FF8E1D18D6B6009986B5 /* UMMobClick.framework in Frameworks */,
 				E1D5F7D21B68DA1C002ADC9B /* ImageIO.framework in Frameworks */,
 				E18AE1321B661D8100D2C6A0 /* libicucore.dylib in Frameworks */,
 				E18AE1041B65CD5000D2C6A0 /* SystemConfiguration.framework in Frameworks */,
@@ -1201,6 +1213,10 @@
 		8DB536CC1807D2C60043C99A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF37FF931D18D735009986B5 /* libsqlite3.tbd */,
+				CF37FF911D18D716009986B5 /* libz.tbd */,
+				CF37FF8F1D18D6F3009986B5 /* CoreTelephony.framework */,
+				CF37FF8D1D18D6B6009986B5 /* UMMobClick.framework */,
 				E1D5F7D11B68DA1C002ADC9B /* ImageIO.framework */,
 				E18AE1311B661D8100D2C6A0 /* libicucore.dylib */,
 				E18AE1031B65CD5000D2C6A0 /* SystemConfiguration.framework */,
@@ -2809,8 +2825,12 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: alin xia (292DV6QN69)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: alin xia (292DV6QN69)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hbpay/Libs",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hbpay/hbpay-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -2837,8 +2857,12 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: alin xia (292DV6QN69)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: alin xia (292DV6QN69)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hbpay/Libs",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hbpay/hbpay-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
