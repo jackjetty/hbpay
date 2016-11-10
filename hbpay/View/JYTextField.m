@@ -8,6 +8,11 @@
 
 #import "JYTextField.h"
 #import <QuartzCore/QuartzCore.h>
+@interface JYTextField ()
+@property(nonatomic,strong)TapDoneButton tapdonebutton;
+@end
+
+
 
 @implementation JYTextField
 
@@ -36,6 +41,16 @@
         [self setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         [self setBackgroundColor:[UIColor whiteColor]];
         [self.layer setMasksToBounds:NO];
+        
+        self.keyboardType = UIKeyboardTypeDecimalPad;
+        UIToolbar * toobar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 38.0f)];
+        toobar.translucent = YES;
+        toobar.barStyle = UIBarStyleDefault;
+        UIBarButtonItem * spaceBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem * doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(resignKeyboard:)];
+        [toobar setItems:@[spaceBarButtonItem,doneBarButtonItem]];
+        self.inputAccessoryView = toobar;
+        
     }
     return self;
 }
@@ -80,4 +95,20 @@
                               bounds.size.height);
     return inset;
 }
+
+- (void)resignKeyboard:(id)sender
+{
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+    if (self.tapdonebutton) {
+        self.tapdonebutton(self);
+    }
+    if ([self.delegateMy respondsToSelector:@selector(didTapDoneButton:)]) {
+        [self.delegateMy didTapDoneButton:self];
+    }
+}
+-(void)tapDoneButtonBlock:(TapDoneButton)aBlock
+{
+    self.tapdonebutton = aBlock;
+}
+
 @end

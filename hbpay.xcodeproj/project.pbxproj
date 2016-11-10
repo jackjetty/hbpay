@@ -21,6 +21,7 @@
 		CF37FF901D18D6F3009986B5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF37FF8F1D18D6F3009986B5 /* CoreTelephony.framework */; };
 		CF37FF921D18D716009986B5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF37FF911D18D716009986B5 /* libz.tbd */; };
 		CF37FF941D18D735009986B5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF37FF931D18D735009986B5 /* libsqlite3.tbd */; };
+		CFA860221DD191E600D21CFD /* DoTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA860211DD191E600D21CFD /* DoTextField.m */; };
 		CFCD838D1CE49B410078719E /* TMController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCD838C1CE49B410078719E /* TMController.m */; };
 		E1709E721B670B2200787B3C /* Constant.h in Sources */ = {isa = PBXBuildFile; fileRef = E1709E691B670B2200787B3C /* Constant.h */; };
 		E1709E731B670B2200787B3C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E1709E6C1B670B2200787B3C /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -443,6 +444,8 @@
 		CF37FF8F1D18D6F3009986B5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		CF37FF911D18D716009986B5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		CF37FF931D18D735009986B5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CFA860201DD191E600D21CFD /* DoTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoTextField.h; sourceTree = "<group>"; };
+		CFA860211DD191E600D21CFD /* DoTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoTextField.m; sourceTree = "<group>"; };
 		CFCD838B1CE49B410078719E /* TMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMController.h; sourceTree = "<group>"; };
 		CFCD838C1CE49B410078719E /* TMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMController.m; sourceTree = "<group>"; };
 		E1709E691B670B2200787B3C /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -2143,6 +2146,8 @@
 		E1D5F7BC1B686AA1002ADC9B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CFA860201DD191E600D21CFD /* DoTextField.h */,
+				CFA860211DD191E600D21CFD /* DoTextField.m */,
 				E1D6FCC51BD0C8020085BC04 /* CZPicker */,
 				E1D5F3841BC8DF6800810EE3 /* APRoundedButton.h */,
 				E1D5F3851BC8DF6800810EE3 /* APRoundedButton.m */,
@@ -2410,6 +2415,7 @@
 				E1D5AD341BB3AC4C000D9A6A /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				E1D5ADC51BB3AC4C000D9A6A /* GPUImageVignetteFilter.m in Sources */,
 				E1D5F7D01B68B179002ADC9B /* AdScrollView.m in Sources */,
+				CFA860221DD191E600D21CFD /* DoTextField.m in Sources */,
 				E1D5AD641BB3AC4C000D9A6A /* GPUImageHazeFilter.m in Sources */,
 				E1D5AD5D1BB3AC4C000D9A6A /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				E1D413CB1BC667B100641592 /* MessageCell.m in Sources */,
@@ -2827,6 +2833,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: alin xia (292DV6QN69)";
+				DEVELOPMENT_TEAM = 292DV6QN69;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/hbpay/Libs",
@@ -2844,7 +2851,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.zj114.hbpay;
 				PRODUCT_NAME = "168充值宝";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "80e6831b-d9f9-4152-ac7e-f8b6b7c1afd6";
+				PROVISIONING_PROFILE_SPECIFIER = PDBhbpay;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -2859,6 +2867,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: alin xia (292DV6QN69)";
+				DEVELOPMENT_TEAM = 292DV6QN69;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/hbpay/Libs",
@@ -2876,7 +2885,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.net.zj114.hbpay;
 				PRODUCT_NAME = "168充值宝";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "80e6831b-d9f9-4152-ac7e-f8b6b7c1afd6";
+				PROVISIONING_PROFILE_SPECIFIER = PDBhbpay;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;

@@ -28,10 +28,10 @@
         self.moneyLabel.text = @"话费余额：0.00元";
         [self addSubview:self.moneyLabel]; 
         
-        UIImageView *arrowImg = [[UIImageView alloc] initWithFrame:CGRectMake(screen_width-10-20,( H(self)-20)/2, 12, 20)];
-        [arrowImg setImage:[UIImage imageNamed:@"icon_mine_accountViewRightArrow"]];
+        self.arrowImg = [[UIImageView alloc] initWithFrame:CGRectMake(screen_width-10-20,( H(self)-20)/2, 12, 20)];
+        [self.arrowImg setImage:[UIImage imageNamed:@"icon_mine_accountViewRightArrow"]];
          
-        [self addSubview: arrowImg];
+        [self addSubview: self.arrowImg];
         
         self.userInteractionEnabled = YES;
         

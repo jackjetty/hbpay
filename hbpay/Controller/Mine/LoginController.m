@@ -13,13 +13,20 @@
 #import "FindController.h"
 #import "MineController.h"
 
+#import "DoTextField.h"
+
 @interface LoginController ()<UITableViewDataSource,UITableViewDelegate ,UITextFieldDelegate>
 @property (nonatomic, strong) PlaceholderTextView *feedbackTextView;
 @property (nonatomic, strong) MBProgressHUD       *HUD;
 @property (nonatomic,retain)  TitleView *titleView;
 @property (nonatomic,retain)  UILabel *topLabel;
+
+@property (nonatomic,retain)  UIButton *searchButton;
 @property (nonatomic,assign) BOOL          isRemember;
 @property (nonatomic,strong) UITableView *registerTableView;
+
+
+
 @property  AppDelegate *appDelegate;
 #pragma mark Register TextField Tag enum
 enum TAG_REGISTER_TEXTFIELD{
@@ -102,6 +109,64 @@ enum TAG_PROTOCOL_BUTTON{
         return 1;
     
 }
+
+/*
+
+- (void)keyboardWillShowOnDelay:(NSNotification *)notification {
+    [self performSelector:@selector(keyboardWillShow:) withObject:nil afterDelay:0];
+}
+- (void)SearchButtonDidTouch:(id)sender{
+    
+    
+       
+        [ (UITextField *)[self.view viewWithTag:Tag_AccountTextField] resignFirstResponder];
+        
+        
+   
+}
+
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    
+    UIView *foundKeyboard = nil;
+    UIWindow *keyboardWindow = nil;
+    
+    for (UIWindow *testWindow in [[UIApplication sharedApplication] windows]) {
+        if (![[testWindow class] isEqual:[UIWindow class]]) {
+            keyboardWindow = testWindow;
+            break;
+        }
+    }
+    
+    if (!keyboardWindow) return;
+    
+    for (__strong UIView *possibleKeyboard in [keyboardWindow subviews]) {
+        
+        if ([[possibleKeyboard description] hasPrefix:@"<UIInputSetContainerView"]) {
+            for (__strong UIView *possibleKeyboard_2 in possibleKeyboard.subviews) {
+                if ([possibleKeyboard_2.description hasPrefix:@"<UIInputSetHostView"]) {
+                    foundKeyboard = possibleKeyboard_2;
+                }
+            }
+        }
+    }
+    
+    if (foundKeyboard) {
+        if ([[foundKeyboard subviews] indexOfObject:_searchButton] == NSNotFound) {
+            [foundKeyboard addSubview:_searchButton];
+        } else {
+            [foundKeyboard bringSubviewToFront:_searchButton];
+        }
+    }
+}*/
+
+
+
+ 
+
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *cellIdentifier = @"cellIdentifier";
@@ -119,13 +184,33 @@ enum TAG_PROTOCOL_BUTTON{
    if (indexPath.section == 0){
         
         cell.imageView.image = PNGIMAGE(@"register_user@2x");
-        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(50.f, 12.f, 220.f, 21.f)];
+       
+        
+       
+        DoTextField *textField = [[DoTextField alloc] initWithFrame:CGRectMake(50.f, 12.f, 220.f, 21.f)];
         textField.tag = Tag_AccountTextField;
         textField.returnKeyType = UIReturnKeyDone;
         textField.delegate = self;
         textField.placeholder = @"手机号码,必填";
         textField.keyboardType = UIKeyboardTypeNumberPad;
+        
         textField.returnKeyType = UIReturnKeyDone;
+       
+        /*[textField tapDoneButtonBlock:^(DoTextField *mytextfield) {
+           NSLog(@"233333312");
+        }];*/
+       
+
+       
+       
+       /*_searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+       _searchButton.frame = CGRectMake(0, 163, 106, 53);
+       [_searchButton setTitle:@"确定" forState:UIControlStateNormal];
+       [_searchButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+       [_searchButton addTarget:self action:@selector(SearchButtonDidTouch:) forControlEvents:UIControlEventTouchUpInside];
+       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShowOnDelay:) name:UIKeyboardWillShowNotification object:nil];*/
+       
+       
         if(_isRemember){
            key= [NSString stringWithFormat:STORE_PHONENUMBER];
            textField.text=[Utils getStoreValue:key];
@@ -372,7 +457,7 @@ enum TAG_PROTOCOL_BUTTON{
         NSString *badgeValue =loginRstModel.MessageNumber>0? [NSString stringWithFormat:@"%d",loginRstModel.MessageNumber]:nil;
         [[[[[self tabBarController] viewControllers] objectAtIndex: 1] tabBarItem] setBadgeValue:badgeValue];
         [[Tool sharedInstance]  setLongIn:true];
-        [[Tool sharedInstance] setLeftMoney:@""];
+        [[Tool sharedInstance]  setLeftMoney:@""];
          //[self.navigationController popToRootViewControllerAnimated:YES];
         
        // [[NSNotificationCenter defaultCenter] postNotificationName:@"MineController_Refresh" object:nil];
@@ -497,8 +582,8 @@ enum TAG_PROTOCOL_BUTTON{
 /**
  *	@brief	键盘出现
  *
- *	@param 	aNotification 	参数
- */
+ *	@param 	aNotification 	参数*/
+
 - (void)keyboardWillShow:(NSNotification *)aNotification
 
 {

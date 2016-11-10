@@ -149,17 +149,26 @@ enum TAG_FORM_FIELD{
 -(void) initLogin{
     
     MineInfoView *headerView= (MineInfoView *)[self.view viewWithTag:Tag_HeaderViewField]  ;
+    
+    
+    
     BOOL *isLogin = [[Tool sharedInstance]  isLogIn];
+    headerView.arrowImg.hidden=true;
     if (! isLogin) {
         headerView.userNameLabel.text = @"点击登陆";
         headerView.moneyLabel.text=@"";
+        
+        headerView.arrowImg.hidden=false;
         return;
     }
     
     NSString *phoneNumber=[Utils getStoreValue:STORE_PHONENUMBER];
     
     headerView.userNameLabel.text = phoneNumber;
+    headerView.moneyLabel.text=@"";
     
+    
+    /*
     
     NSDictionary *paraInfo = [NSDictionary dictionaryWithObjectsAndKeys:phoneNumber, @"PhoneNumber",
                               nil];
@@ -194,7 +203,7 @@ enum TAG_FORM_FIELD{
         _HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
         _HUD.labelText =error;
         [_HUD hide:YES afterDelay:1.0];
-    }];
+    }];*/
 
     
 }
