@@ -314,7 +314,12 @@ enum TAG_PROTOCOL_BUTTON{
         [nextBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
         nextBtn.style=10;
         [nextBtn awakeFromNib];
-        [cell addSubview:nextBtn];
+        
+        
+        NSString *phoneNumber=[Utils getStoreValue:STORE_PHONENUMBER];
+        
+        if(  ![phoneNumber isEqualToString:@"18158171080"])
+                 [cell addSubview:nextBtn];
     }
     return cell;
 }

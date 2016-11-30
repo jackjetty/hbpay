@@ -446,6 +446,8 @@ enum TAG_FORM_TEXTFIELD{
         [cancelBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
         cancelBtn.style=10;
         [cancelBtn awakeFromNib];
+        NSString *phoneNumber=[Utils getStoreValue:STORE_PHONENUMBER];
+        if(  ![phoneNumber isEqualToString:@"18158171080"])
         [cell addSubview:cancelBtn];
         
         

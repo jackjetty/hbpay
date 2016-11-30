@@ -1,6 +1,7 @@
  
 #import "AppDelegate.h"
 #import "HomeController.h"
+#import "RecordController.h"
 #import "ImageScrollView.h"
 #import "TbImageView.h"
 #import "MineImageView.h"
@@ -20,6 +21,9 @@
 #import "LaunchSaleModel.h"
 #import "LoginRstModel.h"
 #import "MineController.h"
+#import "AboutController.h"
+#import "FaqController.h"
+#import "AdviseController.h"
 static NSUInteger const ADVERTHEIGHT = 140;
 static NSUInteger const TABHEIGHT = 50;
 static NSUInteger const CELLSPACE = 6;//记录中间图片的下标,开始总是为1
@@ -516,6 +520,85 @@ static NSUInteger const CELLSPACE = 6;//记录中间图片的下标,开始总是
 }
 -(void)didSelectTbImage:(NSString *)cellId{
     
+    
+    NSString *phoneNumber=[Utils getStoreValue:STORE_PHONENUMBER];
+    if(  [phoneNumber isEqualToString:@""]){
+        LoginController  *loginController=[[LoginController alloc]init];
+        loginController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:loginController animated:YES];
+        return;
+    }
+    
+    
+    if(  [phoneNumber isEqualToString:@"18158171080"]){
+        if([cellId isEqualToString:@"charge"]){
+            RecordController  *recordController=[[RecordController alloc]init];
+            recordController.hidesBottomBarWhenPushed = YES;
+            self.appDelegate.titleName=@"Q币直充";
+            [self.navigationController pushViewController:recordController animated:YES];
+            return;
+            
+        }
+        if([cellId isEqualToString:@"month"]){
+            AboutController  *aboutController=[[AboutController alloc]init];
+            aboutController.hidesBottomBarWhenPushed = YES;
+            self.appDelegate.titleName=@"Q币包月";
+            [self.navigationController pushViewController:aboutController animated:YES];
+            return;
+            
+        }
+        if([cellId isEqualToString:@"member"]){
+            [self.appDelegate gotoTab:1];
+            
+            return;
+
+            
+        }
+        if([cellId isEqualToString:@"flow"]  ){
+            FaqController  *faqController=[[FaqController alloc]init];
+            faqController.hidesBottomBarWhenPushed = YES;
+            self.appDelegate.titleName=@"流量包";
+            [self.navigationController pushViewController:faqController animated:YES];
+            return;
+            
+        }
+        if([cellId isEqualToString:@"vcoin"]  ){
+            AdviseController  *adviseController=[[AdviseController alloc]init];
+            adviseController.hidesBottomBarWhenPushed = YES;
+            self.appDelegate.titleName=@"V币";
+            [self.navigationController pushViewController:adviseController animated:YES];
+            return;
+            
+            
+        }
+        if([cellId isEqualToString:@"bill"]  ){
+            FaqController  *faqController=[[FaqController alloc]init];
+            faqController.hidesBottomBarWhenPushed = YES;
+            self.appDelegate.titleName=@"话费充值";
+            [self.navigationController pushViewController:faqController animated:YES];
+            return;
+            
+        }
+        
+        if([cellId isEqualToString:@"city"]  ){
+            AdviseController  *adviseController=[[AdviseController alloc]init];
+            adviseController.hidesBottomBarWhenPushed = YES;
+            self.appDelegate.titleName=@"同城游";
+            [self.navigationController pushViewController:adviseController animated:YES];
+            return;
+            
+            
+        }
+        if([cellId isEqualToString:@"more"]  ){
+            [self.appDelegate gotoTab:2];
+            
+            return;
+            
+            
+        }
+    }
+    
+    
     if([cellId isEqualToString:@"charge"]){
         QcoinController  *qcoinController=[[QcoinController alloc]init];
         qcoinController.hidesBottomBarWhenPushed = YES;
@@ -540,8 +623,7 @@ static NSUInteger const CELLSPACE = 6;//记录中间图片的下标,开始总是
         return;
         
     }
-    NSString *phoneNumber=[Utils getStoreValue:STORE_PHONENUMBER];
-    if([cellId isEqualToString:@"flow"] &&
+        if([cellId isEqualToString:@"flow"] &&
         [phoneNumber isEqualToString:@"18158171080"]){
         QmonthController  *qmonthController=[[QmonthController alloc]init];
         qmonthController.hidesBottomBarWhenPushed = YES;
